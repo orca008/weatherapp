@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- لایه اصلی از نوع RelativeLayout که عناصر را به صورت نسبی قرار می‌دهد -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="#90caf9"
+    >
+
+    <!-- عنوان شهر -->
+    <TextView
+        android:id="@+id/cityNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/urbanist"
+        android:text="شهر"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        />
+
+    <!-- نمایش دما -->
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/urbanist"
+        android:text="۲۵°"
+        android:textColor="#FFBF00"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:layout_below="@id/cityNameText"/>
+
+    <!-- بخش جزئیات (رطوبت و باد) -->
+    <LinearLayout
+        android:id="@+id/detailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/temperatureText"
+        android:background="@drawable/backgrond2"
+        >
+
+        <!-- بخش رطوبت -->
+        <LinearLayout
+            android:id="@+id/humidityLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            >
+            <!-- آیکون رطوبت -->
+            <ImageView
+                android:id="@+id/humidityIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/humidity"
+                />
+
+            <!-- مقدار رطوبت -->
+            <TextView
+                android:id="@+id/humidityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60%"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/urbanist"
+                />
+            <!-- عنوان رطوبت -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="رطوبت"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/urbanist"
+                />
+
+        </LinearLayout>
+
+        <!-- بخش باد -->
+        <LinearLayout
+            android:id="@+id/windLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            >
+            <!-- آیکون باد -->
+            <ImageView
+                android:id="@+id/windIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/wind"
+                />
+
+            <!-- مقدار باد -->
+            <TextView
+                android:id="@+id/windText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 km/h"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/urbanist"
+                />
+            <!-- عنوان باد -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="باد"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/urbanist"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- آیکون وضعیت آب و هوا -->
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/detailsLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:elevation="12dp"
+        android:src="@drawable/ic_01d"
+        android:contentDescription="Weather Icon"
+        />
+
+    <!-- توضیح وضعیت آب و هوا -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weatherIcon"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/urbanist"
+        android:text="آفتابی"
+        android:textSize="28sp"
+        />
+
+    <!-- ورودی نام شهر -->
+    <EditText
+        android:id="@+id/cityNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionText"
+        android:textColor="#EFEFEF"
+        android:padding="12dp"
+        android:textColorHint="#BFBFBF"
+        android:gravity="center"
+        android:fontFamily="@font/urbanist"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:hint="نام شهر را وارد کنید"
+        />
+
+    <!-- دکمه جستجوی شهر -->
+    <Button
+        android:id="@+id/fetchWeatherButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityNameInput"
+        android:backgroundTint="#2B3A67"
+        android:fontFamily="@font/urbanist"
+        android:text="جستجوی شهر"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        />
+
+    <!-- دکمه ارسال آب‌وهوا با پیامک -->
+    <Button
+        android:id="@+id/sendWeatherSmsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/smsButton"
+        android:layout_marginBottom="12dp"
+        android:text="ارسال آب‌وهوا با پیامک"
+        android:backgroundTint="#2B3A67"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:fontFamily="@font/urbanist" />
+
+    <!-- دکمه نمایش پیامک‌ها -->
+    <Button
+        android:id="@+id/smsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/aboutButton"
+        android:layout_marginBottom="12dp"
+        android:text="نمایش پیامک"
+        android:backgroundTint="#2B3A67"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:fontFamily="@font/urbanist" />
+
+    <!-- دکمه درباره برنامه -->
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
+        android:text="درباره برنامه"
+        android:backgroundTint="#2B3A67"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:fontFamily="@font/urbanist" />
+
+</RelativeLayout>

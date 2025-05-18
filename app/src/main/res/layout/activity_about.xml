@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- لایه اصلی از نوع LinearLayout که همه عناصر را به صورت عمودی قرار می‌دهد -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" <!-- عرض لایه به اندازه کل صفحه -->
+    android:layout_height="match_parent" <!-- ارتفاع لایه به اندازه کل صفحه -->
+    android:orientation="vertical" <!-- عناصر به صورت عمودی چیده می‌شوند -->
+    android:gravity="center" <!-- همه عناصر در مرکز قرار می‌گیرند -->
+    android:padding="24dp"> <!-- فاصله داخلی لایه از اطراف -->
+
+    <!-- متن خوش‌آمدگویی و توضیح درباره برنامه -->
+    <TextView
+        android:id="@+id/aboutText" <!-- شناسه این متن -->
+        android:layout_width="wrap_content" <!-- عرض به اندازه متن -->
+        android:layout_height="wrap_content" <!-- ارتفاع به اندازه متن -->
+        android:text="به برنامه آب و هوای من خوش آمدید!\nاین صفحه درباره برنامه است." <!-- متن نمایشی -->
+        android:textSize="18sp" <!-- اندازه فونت -->
+        android:layout_marginBottom="32dp" /> <!-- فاصله پایین متن -->
+
+    <!-- دکمه بازگشت به خانه -->
+    <Button
+        android:id="@+id/backToHomeButton" <!-- شناسه دکمه -->
+        android:layout_width="wrap_content" <!-- عرض به اندازه متن -->
+        android:layout_height="wrap_content" <!-- ارتفاع به اندازه متن -->
+        android:text="بازگشت به خانه" /> <!-- متن دکمه -->
+
+</LinearLayout> <!-- پایان لایه اصلی --> 
